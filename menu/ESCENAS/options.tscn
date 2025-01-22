@@ -1,0 +1,76 @@
+[gd_scene load_steps=6 format=3 uid="uid://kptcaetdvc21"]
+
+[ext_resource type="Script" path="res://SCRIPTS/options.gd" id="1_h8kjy"]
+[ext_resource type="Texture2D" uid="uid://cudt4sw5agun0" path="res://IMAGES/Entorno de fondo 2D de cementerio para un juego móvil Un paisaje de fondo horizontal de alta calidad Ubicación de diseño de plantilla de juego Ai generativo _ Foto Premium.JPEG" id="1_ybahq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ndnh8"]
+bg_color = Color(0.52549, 0.0156863, 0.498039, 0.717647)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iffm2"]
+bg_color = Color(0.52549, 0.0156863, 0.498039, 0.717647)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gmdsr"]
+bg_color = Color(0.52549, 0.0156863, 0.498039, 0.717647)
+
+[node name="OPTIONS" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h8kjy")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.854902, 0.427451, 0.458824, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ybahq")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -134.0
+offset_top = -98.0
+offset_right = 127.0
+offset_bottom = 99.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 22
+
+[node name="VOLUME" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_ndnh8")
+text = "VOLUME"
+
+[node name="RESOLUTIONS" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_iffm2")
+text = "RESOLUCIÓN"
+
+[node name="BACK" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_gmdsr")
+text = "VOLVER"
+
+[connection signal="pressed" from="VBoxContainer/BACK" to="." method="_on_back_pressed"]

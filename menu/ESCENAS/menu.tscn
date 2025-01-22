@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=3 uid="uid://4xvnbmpqtapc"]
+
+[ext_resource type="Texture2D" uid="uid://cudt4sw5agun0" path="res://IMAGES/Entorno de fondo 2D de cementerio para un juego móvil Un paisaje de fondo horizontal de alta calidad Ubicación de diseño de plantilla de juego Ai generativo _ Foto Premium.JPEG" id="1_5dhgq"]
+[ext_resource type="Script" path="res://SCRIPTS/menu.gd" id="1_ung7a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ndnh8"]
+bg_color = Color(0.52549, 0.0156863, 0.498039, 0.717647)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iffm2"]
+bg_color = Color(0.52549, 0.0156863, 0.498039, 0.717647)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gmdsr"]
+bg_color = Color(0.52549, 0.0156863, 0.498039, 0.717647)
+
+[node name="MENU" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ung7a")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.854902, 0.427451, 0.458824, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_5dhgq")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -134.0
+offset_top = -98.0
+offset_right = 127.0
+offset_bottom = 99.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 22
+
+[node name="PLAY" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_ndnh8")
+text = "JUGAR"
+
+[node name="OPTIONS" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_iffm2")
+text = "OPCIONES"
+
+[node name="QUIT" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_gmdsr")
+text = "SALIR"
+
+[connection signal="pressed" from="VBoxContainer/PLAY" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/OPTIONS" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/QUIT" to="." method="_on_quit_pressed"]
